@@ -7,10 +7,7 @@ error_reporting(-1);
     <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/table.css" rel="stylesheet">
     <?php
-    
      include ('./lib/connect.php');
-    // include ('./lib/config.inc.php');
-     
     ?>
 </head>
 <body>
@@ -28,44 +25,14 @@ error_reporting(-1);
         <?php
         if(isset($_POST['account_id']))
         {
-
             $account_id=$_POST['account_id'];
-
-            // $result = mysql_query ("DELETE FROM account WHERE account_id='$account_id'");
-            // if ($result == 'true')
-            //   {
-            //     echo "<h4>Данные успешно удалены-1.</h4>";
-            //   }
-            // else
-            //   {
-            //     echo "<h4>Данные не удалены-1!</h4>";
-            //   }
-            // $results = mysql_query ("DELETE FROM geopoint WHERE account_id='$account_id'");
-            // if ($results == 'true')
-            //   {
-            //     echo "<h4>Данные успешно удалены-2.</h4>";
-            //   }
-            // else
-            //   {
-            //     echo "<h4>Данные не удалены-2!</h4>";
-            //   }
-                
-                // mysqli_query("DELETE FROM `account` WHERE account_id='$account_id'");
-                // mysqli_query("DELETE FROM `geopoint` WHERE account_id='$account_id'");
- // print "все прошло успешно";
             $query = "DELETE FROM `account` WHERE account_id='$account_id'"; 
-            $res = mysql_query($query); 
-            // $row = mysql_fetch_row($res);
+            $res = mysql_query($query);
                         $querys = "DELETE FROM `geopoint` WHERE account_id='$account_id'"; 
-            $res1 = mysql_query($querys); 
-            // $row = mysql_fetch_row($res);
+            $res1 = mysql_query($querys);
  }
         ?>
-
-
     <br><br><br><br>
-
-        
     </div>
 </div>
 </body>

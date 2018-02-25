@@ -7,10 +7,7 @@ error_reporting(-1);
     <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/table.css" rel="stylesheet">
     <?php
-    
      include ('./lib/connect.php');
-    // include ('./lib/config.inc.php');
-     
     ?>
 </head>
 <body>
@@ -37,11 +34,7 @@ error_reporting(-1);
             $house=$_POST['house'];
         }
         ?>
-
-
     <br><br><br><br>
-
-        
     </div>
 </div>
 </body>

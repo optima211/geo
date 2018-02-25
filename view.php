@@ -6,7 +6,6 @@
     <?php
     error_reporting(-1);
      include ('./lib/connect.php');
-    // include ('./lib/config.inc.php');
     ?>
 </head>
 <body>
@@ -23,7 +22,6 @@
         <?php
         if(isset($_POST['name'])){
         	$name=$_POST['name'];
-
 $account = $link->query("SELECT * FROM account where name = '$name'")->fetch_assoc();
 $account_id = $account['account_id'];
 $type = $account['type'];
@@ -72,11 +70,7 @@ else{
     </script>
           <?php  }}
         ?>
-        
     </div>
 </div>
 </body>
 </html>
-<?php
-
-?>

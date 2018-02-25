@@ -7,10 +7,7 @@ error_reporting(-1);
     <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/table.css" rel="stylesheet">
     <?php
-    
      include ('./lib/connect.php');
-    // include ('./lib/config.inc.php');
-     
     ?>
 </head>
 <body>
@@ -46,7 +43,6 @@ error_reporting(-1);
         <?php
         if(isset($_POST['account_id']))
         {
-
             $account_id=$_POST['account_id'];
             $name=$_POST['name'];
             $type=$_POST['type'];
@@ -55,60 +51,14 @@ error_reporting(-1);
             $lat=$_POST['lat'];
             $lng=$_POST['lng'];
             $account_state=$_POST['account_state'];
-          
-            // $result = mysql_query ("UPDATE account SET name='$name', type='$type', comment='$comment', owner='$owner', account_state='$account_state' WHERE account_id='$account_id'");
-            // if ($result == 'true')
-            //   {
-            //     echo "<h4>Данные успешно обновлены-1.</h4>";
-            //   }
-            // else
-            //   {
-            //     echo "<h4>Данные не обновлены-1!</h4>";
-            //   }
-            // $result = mysql_query ("UPDATE geopoint SET lat='$lat', lng='$lng' WHERE account_id='$account_id'");
-            // if ($result == 'true')
-            //   {
-            //     echo "<h4>Данные успешно обновлены-2.</h4>";
-            //   }
-            // else
-            //   {
-            //     echo "<h4>Данные не обновлены-2!</h4>";
-            //   }
-
-
 $res1 = "UPDATE account SET name='$name', type='$type', comment='$comment', owner='$owner', account_state='$account_state' WHERE account_id='$account_id'";
 $res2 = "UPDATE geopoint SET lat='$lat', lng='$lng' WHERE account_id='$account_id'";
  
 $insert1 = mysql_query($res1); //сохраняем таблицу 1
 $insert2 = mysql_query($res2); //сохраняем таблицу 2
- 
-$proverka1 = $insert1 == true ? 'Данные, успешно Сохранены в таблицу 1...' : 'Произошла Ошибка... Данные не были сохранены.' ; 
-$proverka2 = $insert2 == true ? 'Данные, успешно Сохранены в таблицу 2...' : 'Произошла Ошибка... Данные не были сохранены.' ; 
- 
-$proverk = $proverka1 == $proverka2 ? true : false ;
- 
-if(!$proverk){
-	// если сохранились в обе
-	 // echo 'uspeh';
-	///////////
-
-}else{
-	// если сохранились не в обе удаляем
-//mysql_query("DELETE FROM `account` WHERE id='$id' LIMIT 1");
-//mysql_query("DELETE FROM `geopoint` WHERE id='$id' LIMIT 1");
-   // print "не все прошло успешно";
-}
-
-
-
-
                 }
         ?>
-
-
     <br><br><br><br>
-
-        
     </div>
 </div>
 </body>

@@ -7,10 +7,7 @@ error_reporting(-1);
   	    <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/table.css" rel="stylesheet">
     <?php
-    
      include ('./lib/connect.php');
-    // include ('./lib/config.inc.php');
-     
     ?>
   </head>
 <body>
@@ -35,7 +32,6 @@ error_reporting(-1);
             $lat=$_POST['lat'];
             $lng=$_POST['lng'];
             $zoom=$_POST['zoom'];
-        
         ?>
     <?php    echo '<h3>Введенные данные</h3>
         
@@ -44,12 +40,7 @@ error_reporting(-1);
 <tr>     <td>Долгота:</td> <td>'; echo $lng; echo'</td></tr>
 <tr>     <td>Масштаб:</td> <td>'; echo $zoom; echo'</td></tr>
  </table>';?>
-
     <br><br>
-
-        
-
-
  <div id="map"></div>
     <script>
       function initMap() {
@@ -77,4 +68,3 @@ error_reporting(-1);
 </div>
   </body>
 </html>
-<!-- https://maps.googleapis.com/maps/api/geocode/json?address=Новосибирск+свечникова+4/1&key=AIzaSyAENKGpbOI9KaivcTR-MSobwnq9Fh83VDc -->
