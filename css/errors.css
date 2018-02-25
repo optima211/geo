@@ -1,0 +1,54 @@
+      
+@font-face {font-family:'viva';src: url('../fonts/vivaviva.TTF');}
+    html, body{
+        margin:0;
+        padding:0;
+        width:100%;
+        height:100%;
+    }
+    #bol {
+        background:#FFFFFF;
+        width:400px;
+        height:400px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin:-200px 0 0 -200px;
+}
+a {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+  background:#FFFFFF; /*добавляем фон к пункту меню*/
+  color:#0000сс; /*меняем цвет ссылок*/
+  padding:0px 15px; /*добавляем отступ*/
+  font-family: arial; /*меняем шрифт*/
+  line-height:50px; /*ровняем меню по вертикали*/
+  display: block; 
+  border-right: 1px solid #FFFFFF; /*добавляем бордюр справа*/
+  -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+  -o-transition: all 0.3s 0.01s ease;
+  -webkit-transition: all 0.3s 0.01s ease;
+}
+a:hover {
+  background:#FFFFFF;/*добавляем эффект при наведении*/
+}
+p {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+  background:#FFFFFF; /*добавляем фон к пункту меню*/
+  color:#000000; /*меняем цвет ссылок*/
+  padding:0px 15px; /*добавляем отступ*/
+  font-family: Georgia; /*меняем шрифт*/
+  line-height:50px; /*ровняем меню по вертикали*/
+  display: block; 
+  border-right: 1px solid #FFFFFF; /*добавляем бордюр справа*/
+  -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+  -o-transition: all 0.3s 0.01s ease;
+  -webkit-transition: all 0.3s 0.01s ease;
+  text-align: center;
+}
+p:hover {
+  background:#FFFFFF;/*добавляем эффект при наведении*/
+}
+img {
+  text-align: center;
+}
+

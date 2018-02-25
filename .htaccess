@@ -1,0 +1,8 @@
+AddDefaultCharset utf-8
+php_flag display_errors On
+php_value error_reporting "E_ALL & ~E_NOTICE"
+ErrorDocument 401 http://geo/errors/401.php
+ErrorDocument 403 http://geo/errors/403.php
+ErrorDocument 404 http://geo/errors/404.php
+ErrorDocument 500 http://geo/errors/500.php
+ErrorDocument 502 http://geo/errors/502.php
