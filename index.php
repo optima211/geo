@@ -1,3 +1,6 @@
+<?php
+// phpinfo();
+?>
 <html>
 <head>
     <link href="/css/menu.css" rel="stylesheet">

@@ -1,13 +1,12 @@
-    <?php
-    error_reporting(-1);
-     include ('./lib/connect.php');
-     $data= $_POST;
-    ?>
 <!DOCTYPE html>
 <html>
 <head>
     <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/table.css" rel="stylesheet">
+    <?php
+    error_reporting(-1);
+     include ('./lib/connect.php');
+    ?>
 </head>
 <body>
     <div name="bol" id="bol">
@@ -18,10 +17,10 @@
     	<h2>Введите данные для поиска</h2>
     	<form name="fmenu" id="fadd" method="POST" action="view.php">
 Название фирмы: <input type="text" name="name" /><br><br>
-    <button type="submit" name="go">Искать</button><br><br>
+    <input type="submit" value="Искать"> <br><br>
 </form>
         <?php
-        if(isset($data['go'])){
+        if(isset($_POST['name'])){
         	$name=$_POST['name'];
 $account = $link->query("SELECT * FROM account where name = '$name'")->fetch_assoc();
 $account_id = $account['account_id'];
