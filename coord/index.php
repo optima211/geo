@@ -48,13 +48,16 @@ $result = $mysqli->query($sql);
 
  echo "<ul>\n";
  while ($actor = $result->fetch_assoc()) {
-   $sql1 = "SELECT * FROM account WHERE  account_id = ".$actor['parrent'];
+   $sql1 = "SELECT * FROM account WHERE  account_id = ".$actor['parrent'];  //Выбор улицы
   $result1 = $mysqli->query($sql1);
   $actor1 = $result1->fetch_assoc();
-    $sql1 = "SELECT * FROM account WHERE  account_id = ".$actor1['parrent'];
+    $sql1 = "SELECT * FROM account WHERE  account_id = ".$actor1['parrent'];  //выбор города
   $result2 = $mysqli->query($sql1);
   $actor2 = $result2->fetch_assoc();
-  $name = $actor2['name'].$actor1['name'].' '.$actor['name'].'';
+      $sql1 = "SELECT * FROM account WHERE  account_id = ".$actor2['parrent'];  //выбор страны
+  $result3 = $mysqli->query($sql1);
+  $actor3 = $result3->fetch_assoc();
+  $name = $actor3['name'].' '.$actor2['name'].' '.$actor1['name'].' '.$actor['name'].'';
   $search = implode(', ', [$name]);
 
   $geoData = google_maps_search($search, $googleKey);

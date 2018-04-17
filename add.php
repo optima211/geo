@@ -28,14 +28,15 @@ error_reporting(-1);
       <option value="6">Служебное помещение </option>
   </select></td></tr>
 <tr><td>Комментарий:</td><td> <input type="text" name="comment" /></td></tr>
+<tr><td>Владелец (номер):</td><td> <input type="number" name="parrent" /></td></tr>
 <tr><td>Владелец (название):</td><td> <input type="text" name="owner" /></td></tr>
 <tr><td>Статус установки:</td><td><select name="account_state" >
       <option value="0">не установлен </option>
       <option value="1">введен в эксплуатацию </option>
   </select></td></tr>
-<tr><td>Широта:</td><td> <input type="text" name="lat" /></td></tr>
-<tr><td>Долгота:</td><td> <input type="text" name="lng" /></td></tr>
-</table><br>
+<!-- <tr><td>Широта:</td><td> <input type="number" name="lat" /></td></tr>
+<tr><td>Долгота:</td><td> <input type="number" name="lng" /></td></tr>
+ --></table><br>
     <input type="submit" value="Добавить" name="add">
 </form>
         <?php
@@ -44,14 +45,15 @@ error_reporting(-1);
             $name=$_POST['name'];
             $type=$_POST['type'];
             $comment=$_POST['comment'];
+            $parrent=$_POST['parrent'];
             $owner=$_POST['owner'];
-            $lat=$_POST['lat'];
-            $lng=$_POST['lng'];
             $account_state=$_POST['account_state'];
-$res1 = "INSERT INTO `account` SET name='$name', type='$type', comment='$comment', owner='$owner'";
-$res2 = "INSERT INTO `geopoint` SET lat='$lat', lng='$lng' ";
-$insert1 = mysql_query($res1); //сохраняем таблицу 1
-$insert2 = mysql_query($res2); //сохраняем таблицу 2
+            //$lat=$_POST['lat'];
+          //  $lng=$_POST['lng'];
+$res1 = "INSERT INTO `account` SET name='$name', type='$type', parrent='$parrent', comment='$comment', owner='$owner', account_state='$account_state'";
+//$res2 = "INSERT INTO `geopoint` SET lat='$lat', lng='$lng' ";
+$insert1 = $connection->query($res1); //сохраняем таблицу 1
+//$insert2 = $connection->query($res2); //сохраняем таблицу 2
                 }
         ?>
     <br><br><br><br>
