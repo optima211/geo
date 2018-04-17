@@ -26,10 +26,10 @@ error_reporting(-1);
         if(isset($_POST['account_id']))
         {
             $account_id=$_POST['account_id'];
-            $query = "DELETE FROM `account` WHERE account_id='$account_id'"; 
-            $res = mysql_query($query);
-                        $querys = "DELETE FROM `geopoint` WHERE account_id='$account_id'"; 
-            $res1 = mysql_query($querys);
+            $res1 = "DELETE FROM `account` WHERE account_id='$account_id'"; 
+             $delete1 = $mysqli->query($res1);
+            //$res2 = "DELETE FROM `geopoint` WHERE account_id='$account_id'"; 
+            // $delete2 = $mysqli->query($res2);
  }
         ?>
     <br><br><br><br>

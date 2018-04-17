@@ -52,8 +52,8 @@ error_reporting(-1);
           //  $lng=$_POST['lng'];
 $res1 = "INSERT INTO `account` SET name='$name', type='$type', parrent='$parrent', comment='$comment', owner='$owner', account_state='$account_state'";
 //$res2 = "INSERT INTO `geopoint` SET lat='$lat', lng='$lng' ";
-$insert1 = $connection->query($res1); //сохраняем таблицу 1
-//$insert2 = $connection->query($res2); //сохраняем таблицу 2
+$insert1 = $mysqli->query($res1); //сохраняем таблицу 1
+//$insert2 = $mysqli->query($res2); //сохраняем таблицу 2
                 }
         ?>
     <br><br><br><br>

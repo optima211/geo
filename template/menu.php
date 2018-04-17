@@ -11,5 +11,6 @@
     <li><a href="add.php">Добавить</a></li>  
     <li><a href="update.php">Изменить</a></li>  
     <li><a href="delete.php">Удалить</a></li>
+    <li><a href="./coord/index.php">Миграция</a></li>
 </ul>
 </div>

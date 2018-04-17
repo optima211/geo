@@ -52,10 +52,9 @@ error_reporting(-1);
             $lng=$_POST['lng'];
             $account_state=$_POST['account_state'];
 $res1 = "UPDATE account SET name='$name', type='$type', comment='$comment', owner='$owner', account_state='$account_state' WHERE account_id='$account_id'";
-$res2 = "UPDATE geopoint SET lat='$lat', lng='$lng' WHERE account_id='$account_id'";
- 
-$insert1 = mysql_query($res1); //сохраняем таблицу 1
-$insert2 = mysql_query($res2); //сохраняем таблицу 2
+//$res2 = "UPDATE geopoint SET lat='$lat', lng='$lng' WHERE account_id='$account_id'";
+ $update1 = $mysqli->query($res1);
+ //$update2 = $mysqli->query($res2);
                 }
         ?>
     <br><br><br><br>
