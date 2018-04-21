@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 25 2018 г., 15:12
--- Версия сервера: 5.6.37
--- Версия PHP: 5.5.38
+-- Время создания: Апр 21 2018 г., 16:16
+-- Версия сервера: 5.7.20-log
+-- Версия PHP: 7.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -43,9 +43,10 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`account_id`, `type`, `name`, `parrent`, `comment`, `owner`, `account_state`) VALUES
-(1, 2, 'Новосибирск', 0, '', 'NOVOSIBIRSK', 0),
+(1, 2, 'Новосибирск', 2, '', 'NOVOSIBIRSK', 0),
+(2, 1, 'Россия', 0, 'Pract-natk', 'Pract-natk', 0),
 (73, 3, '5-ый пер. Успенского', 1, '', 'NOVOSIBIRSK', 0),
-(76, 2, 'Новосибирск(Тест)', 0, '', 'RIM', 0),
+(76, 2, 'Новосибирск(Тест)', 2, '', 'RIM', 0),
 (244, 3, 'Баланс', 1, '', 'NOVOSIBIRSK', 0),
 (251, 3, 'Жуковского', 1, '', 'NSK', 0),
 (252, 3, 'Чайковского', 1, '', 'NSK', 0),
@@ -410,7 +411,7 @@ INSERT INTO `account` (`account_id`, `type`, `name`, `parrent`, `comment`, `owne
 (15097, 3, 'Яринская', 1, '', 'NGSPRIOB', 0),
 (15139, 3, 'пер.Сосновый', 1, '', 'NGSPRIOB', 0),
 (15221, 3, 'Баланс-210', 1, '', 'NGSPRIOB', 0),
-(15420, 2, 'Новосибирск (ДСД)', 0, '', 'RIM1', 0),
+(15420, 2, 'Новосибирск (ДСД)', 2, '', 'RIM1', 0),
 (15421, 3, 'ул. Объединения, 80', 15420, '', 'RIM1', 0),
 (15423, 3, 'ул. Солидарности', 15420, '', 'RIM1', 0),
 (15425, 3, 'ул. Солидарности ', 15420, '', 'RIM1', 0),
@@ -463,11 +464,24 @@ INSERT INTO `account` (`account_id`, `type`, `name`, `parrent`, `comment`, `owne
 (18091, 3, 'Сухарная 2-я', 1, '', 'RIM', 0),
 (18248, 3, 'Ногина спуск', 1, '', 'NGSPRIOB', 0),
 (18311, 3, 'Дачная', 76, '', 'NEW', 0),
-(18312, 1, 'firm-1', NULL, 'comment-1', '', 0),
-(18313, 1, 'firm-2', NULL, 'comment-2', '', 0),
-(18314, 1, 'firm-2', NULL, 'comment-2', '', 0),
-(18315, 1, 'firm-2', NULL, 'comment-2', '', 0),
-(18316, 1, 'firm-3', NULL, 'comment-3', '', 0);
+(18312, 1, 'firm-1', NULL, 'com', '', 0),
+(18313, 1, 'firm-2', NULL, 'com', '', 0),
+(18314, 1, 'firm-2', NULL, 'com', '', 0),
+(18315, 1, 'firm-2', NULL, 'com', '', 0),
+(18316, 1, 'firm-3', NULL, 'com', '', 0),
+(18317, 1, 'firm-1', 0, 'com', 'f', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `account_coordinates`
+--
+
+CREATE TABLE `account_coordinates` (
+  `account_id` int(11) NOT NULL,
+  `lat` text NOT NULL,
+  `lng` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -601,6 +615,12 @@ ALTER TABLE `account`
   ADD KEY `account_id` (`account_id`);
 
 --
+-- Индексы таблицы `account_coordinates`
+--
+ALTER TABLE `account_coordinates`
+  ADD PRIMARY KEY (`account_id`);
+
+--
 -- Индексы таблицы `counter`
 --
 ALTER TABLE `counter`
@@ -639,17 +659,20 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `account`
 --
 ALTER TABLE `account`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18317;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18318;
+
 --
 -- AUTO_INCREMENT для таблицы `geopoint`
 --
 ALTER TABLE `geopoint`
   MODIFY `account_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18317;
+
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `id` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

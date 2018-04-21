@@ -1,4 +1,5 @@
 <?php
+$googleKey = 'AIzaSyAENKGpbOI9KaivcTR-MSobwnq9Fh83VDc';
 define('DB_SERVER', "127.0.0.1:3306");    
 define('DB_DATABASE', "geo");     
 define('DB_USER', "root");           
