@@ -6,6 +6,7 @@
             <li><a href="map.php">По координатам</a></li>
             <li><a href="maper.php">По адресу</a></li>
             <li><a href="view.php">из базы</a></li>
+			<li><a href="adres.php">json-ответ</a></li>
         </ul>
     </li>
     <li><a href="add.php">Добавить</a></li>  
